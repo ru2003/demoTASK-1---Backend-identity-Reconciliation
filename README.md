@@ -114,7 +114,7 @@ Test Case 4: Email + Phone that exist in different primaries
 }
 
 
-👩‍💻 Developed by
+👩‍💻 Developed by :
 Ruchita Nandakishor Chaudhari
 🎓 Final Year Information Technology Student
 🚀 Backend Developer | Java + Spring Boot Enthusiast
