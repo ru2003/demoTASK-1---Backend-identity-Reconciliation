@@ -4,7 +4,7 @@ A Spring Boot-based web service that solves the **"Identity Reconciliation"** ch
 
 ---
 
-### 🎯 Goal:
+## 🎯 Goal:
 1. Build an `/identify` endpoint to accept contact data.
 2. Detect overlaps across purchases using email/phone.
 3. Maintain a **linked chain** of contact records.
@@ -19,7 +19,7 @@ A Spring Boot-based web service that solves the **"Identity Reconciliation"** ch
 ## 🛠️ Tech Stack Used
 
 | Layer           | Tech                         |
-|----------------|------------------------------|
+|-----------------|------------------------------|
 | Backend         | Java 22, Spring Boot         |
 | Database        | MySQL                        |
 | Testing         | Postman                      |
@@ -59,21 +59,15 @@ Maven
 
 2️⃣ Clone This Repo
 bash
-Copy
-Edit
 git clone https://github.com/<your-username>/identity-reconciliation-service.git
 cd identity-reconciliation-service
 3️⃣ Create MySQL Database
 sql
-Copy
-Edit
 CREATE DATABASE contact_db;
 4️⃣ Update application.properties
 In src/main/resources/application.properties:
 
 ini
-Copy
-Edit
 spring.datasource.url=jdbc:mysql://localhost:3306/contact_db
 spring.datasource.username=root
 spring.datasource.password=yourpassword
@@ -83,8 +77,6 @@ spring.jpa.show-sql=true
 Using terminal:
 
 bash
-Copy
-Edit
 ./mvnw spring-boot:run
 Or from IntelliJ:
 
@@ -95,8 +87,6 @@ Click ▶️ Run
 🧪 Postman Testing Guide
 ✅ Test Case 1: New contact
 json
-Copy
-Edit
 {
   "email": "doc@future.com",
   "phoneNumber": "9999999999"
@@ -105,8 +95,6 @@ Edit
 
 ✅ Test Case 2: Same email, new phone
 json
-Copy
-Edit
 {
   "email": "doc@future.com",
   "phoneNumber": "1234567890"
@@ -115,8 +103,6 @@ Edit
 
 ✅ Test Case 3: Same phone, different email
 json
-Copy
-Edit
 {
   "email": "flux@capacitor.com",
   "phoneNumber": "1234567890"
@@ -128,13 +114,11 @@ Edit
 
 ❌ Invalid Case
 json
-Copy
-Edit
 {
   "email": null,
   "phoneNumber": null
 }
-👩‍💻 Developed by :
+👩‍💻 Developed by:
 Ruchita Nandakishor Chaudhari
 🎓 Final Year Information Technology Student
 🚀 Backend Developer | Java + Spring Boot Enthusiast
