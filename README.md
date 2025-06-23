@@ -46,7 +46,7 @@ Your mission (which I accepted ✅):
   "phoneNumber": "9876543210"
 }
 
-Response:
+### Response:
 {
   "primaryContactId": 1,
   "emails": [
@@ -70,3 +70,4 @@ If a match is found on email or phone, and new info is introduced → create a S
 If both email and phone exist in different primaries, the later one becomes a SECONDARY and links to the older one — consolidation happens.
 
 All linked contacts (primary + secondary) are returned in the response.
+---
