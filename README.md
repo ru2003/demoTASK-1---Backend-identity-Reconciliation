@@ -38,7 +38,6 @@ A Spring Boot-based web service that solves the **"Identity Reconciliation"** ch
   "email": "doc@brown.com",
   "phoneNumber": "9876543210"
 }
-
 📌 Business Logic Summary
 If no existing contact is found → create a new PRIMARY contact.
 
@@ -59,6 +58,75 @@ IntelliJ IDEA or VS Code (optional)
 Maven
 
 2️⃣ Clone This Repo
-Edit
 git clone https://github.com/<your-username>/identity-reconciliation-service.git
 cd identity-reconciliation-service
+3️⃣ Create MySQL Database
+sql
+CREATE DATABASE contact_db;
+4️⃣ Update application.properties
+In src/main/resources/application.properties:
+
+properties
+spring.datasource.url=jdbc:mysql://localhost:3306/contact_db
+spring.datasource.username=root
+spring.datasource.password=yourpassword
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+5️⃣ Run the App
+Using terminal:
+
+
+./mvnw spring-boot:run
+Or from IntelliJ:
+
+Open DemoApplication.java
+
+Click ▶️ Run
+
+🧪 Postman Testing Guide
+🔹 Test Case 1: New contact
+json
+{
+  "email": "doc@future.com",
+  "phoneNumber": "9999999999"
+}
+➡️ Creates a new PRIMARY.
+
+🔹 Test Case 2: Same email, new phone
+json
+Copy
+Edit
+{
+  "email": "doc@future.com",
+  "phoneNumber": "1234567890"
+}
+➡️ Adds SECONDARY with new phone, linked to original contact.
+
+🔹 Test Case 3: Same phone, different email
+json
+{
+  "email": "flux@capacitor.com",
+  "phoneNumber": "1234567890"
+}
+➡️ Adds SECONDARY again if email wasn't known.
+
+🔹 Test Case 4: Email + Phone that exist in different primaries
+➡️ Merge both under the older PRIMARY, adjust linkedId and linkPrecedence.
+
+❌ Invalid Case
+json
+Copy
+Edit
+{
+  "email": null,
+  "phoneNumber": null
+}
+👩‍💻 Developed by
+Ruchita Nandakishor Chaudhari
+
+🎓 Final Year Information Technology Student
+🚀 Backend Developer | Java + Spring Boot Enthusiast
+📫 Email: ruchitanchaudhari145@email.com
+🔗 LinkedIn Profile
+
+
