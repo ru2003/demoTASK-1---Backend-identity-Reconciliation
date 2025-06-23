@@ -62,12 +62,16 @@ Your mission (which I accepted ✅):
   ]
 }
 
-## Business Logic Summary
+# Business Logic Rules
 
-If no existing contact is found → create a new PRIMARY contact
+1. When no matching contact exists:
+   - Create new PRIMARY contact
 
-If a match is found on email or phone with new info → create a SECONDARY contact
+2. When matching email or phone found:
+   - Create SECONDARY contact linked to primary
 
-If both email and phone exist in different primaries → merge under older PRIMARY
+3. When email and phone match different primaries:
+   - Merge under the older primary contact
 
-Returns all linked contacts (primary + secondary)
+4. System always returns:
+   - Complete contact chain (primary + secondaries)
