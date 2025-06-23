@@ -62,12 +62,12 @@ Your mission (which I accepted ✅):
   ]
 }
 
-Business Logic Summary
-If no existing contact is found → create a new PRIMARY contact.
+## Business Logic Summary
 
-If a match is found on email or phone, and new info is introduced → create a SECONDARY contact linked to the oldest PRIMARY.
+If no existing contact is found → create a new PRIMARY contact
 
-If both email and phone exist in different primaries, the later one becomes a SECONDARY and links to the older one — consolidation happens.
+If a match is found on email or phone with new info → create a SECONDARY contact
 
-All linked contacts (primary + secondary) are returned in the response.
----
+If both email and phone exist in different primaries → merge under older PRIMARY
+
+Returns all linked contacts (primary + secondary)
